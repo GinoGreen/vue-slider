@@ -31,9 +31,7 @@ const app = new Vue({
 
    mounted(){
 
-      setInterval(() => {
-         this.sliderDown();
-      }, 1000)
+      setInterval(this.sliderDown, 2000)
    },
 
    methods: {

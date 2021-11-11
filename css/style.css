@@ -13,6 +13,9 @@
 }
 
 .item {
+   display: none;
+}
+.item.active {
    display: block;
    position: relative;
 }
@@ -49,11 +52,11 @@
 .item img {
    height: 300px;
    animation-name: filtro-slider;
-   animation-duration: .9s;
+   animation-duration: .8s;
 }
 @keyframes filtro-slider {
    0% {
-      filter: blur(30px);
+      filter: blur(20px);
    }
    100% {
       filter: blur(0px);

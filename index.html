@@ -19,7 +19,7 @@
             <div id="slider-left" class="col-10">
    
                <!-- immagine -->
-               <div class="item">
+               <div v-for="image in images" class="item" :class="{active: images[counter] === image}">
                   <img :src="images[counter]" :alt="titles[counter]">
                   <div class="text-over-img">
                      <h1> {{ titles[counter] }}</h1>
