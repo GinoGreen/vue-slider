@@ -1,0 +1,109 @@
+.lv-container {
+   height: 100vh;
+}
+
+#slider {
+   width: 80%;
+   max-width: 800px;
+   height: 300px;
+}
+
+#slider-right {
+   position: relative;
+}
+
+.item {
+   display: block;
+   position: relative;
+}
+
+.text-over-img {
+   padding-left: 20px;
+   position: absolute;
+   right: 20px;
+   bottom: 20px;
+   text-align: right;
+   color: #fff;
+   animation-name: filtro-testo;
+   animation-duration: 1s;
+   animation-timing-function: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+@keyframes filtro-testo {
+   0% {
+      filter: blur(6px);
+      bottom: 85px;
+   }
+   100% {
+      filter: blur(0px);
+      bottom: 20px;
+   }
+}
+
+.item img,
+.item-mini img {
+   display: block;
+   width: 100%;
+   object-fit: cover;
+}
+
+.item img {
+   height: 300px;
+   animation-name: filtro-slider;
+   animation-duration: .9s;
+}
+@keyframes filtro-slider {
+   0% {
+      filter: blur(30px);
+   }
+   100% {
+      filter: blur(0px);
+   }
+}
+
+.item-mini {
+   height: calc(300px / 5);
+}
+
+.item-mini img {
+   height: 100%;
+   filter: brightness(.45);
+}
+
+.item-mini.active img {
+   outline: 3px solid #fff;
+   outline-offset: -3px;
+   filter: brightness(1);
+   animation-name: filtro;
+   animation-duration: 1s;
+}
+@keyframes filtro {
+   0% {
+      filter: brightness(.45);
+   }
+   100% {
+      filter: brightness(1);
+   }
+}
+
+.up_arrow, .down_arrow {
+   padding: 2px 10px;
+   position: absolute;
+   left: 50%;
+   transform: translateX(-50%);
+   background-color: rgba(255, 255, 255, .6 );
+   border-radius: 50%;
+   cursor: pointer;
+   transition: background-color 0.25s;
+}
+
+.up_arrow:hover,
+.down_arrow:hover {
+   background-color: rgba(255, 255, 255, 1);
+}
+
+.up_arrow {
+   top: 4px;
+}
+.down_arrow {
+   bottom: 4px;
+}
