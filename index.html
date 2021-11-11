@@ -18,6 +18,7 @@
    
             <div id="slider-left" class="col-10">
    
+               <!-- immagine -->
                <div class="item">
                   <img :src="images[counter]" :alt="titles[counter]">
                   <div class="text-over-img">
@@ -30,10 +31,12 @@
    
             <div id="slider-right" class="col-2">
    
+               <!-- iterazione stampa immagini preview -->
                <div v-for="image in images" class="item-mini" :class="{active: (images[counter] === image)}">
                   <img :src="image" alt="titles[counter]">
                </div>
-
+               
+               <!-- Frecce slider -->
                <div @click="sliderUp" class="up_arrow">&uarr;</div>
                <div @click="sliderDown" class="down_arrow">&darr;</div>
                
