@@ -32,8 +32,15 @@
             <div id="slider-right" class="col-2">
    
                <!-- iterazione stampa immagini preview -->
-               <div v-for="image in images" class="item-mini" :class="{active: (images[counter] === image)}">
-                  <img :src="image" alt="titles[counter]">
+               <div
+                  v-for="(image, index) in images"
+                  class="item-mini"
+                  :class="{active: (index === counter)}"
+               >
+                  <img 
+                     @click="counter = index"
+                     :src="image" 
+                     alt="titles[counter]">
                </div>
                
                <!-- Frecce slider -->
